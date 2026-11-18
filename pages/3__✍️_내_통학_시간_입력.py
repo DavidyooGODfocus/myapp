@@ -18,8 +18,14 @@ if not student_id:
     st.stop()
 
 # '측정자료' 탭과 연결하기
+gsheets_secrets = st.secrets.get("connections", {}).get("gsheets", {})
+spreadsheet = gsheets_secrets.get("spreadsheet")
+if not spreadsheet:
+    st.error("Google Sheets 주소가 설정되지 않았습니다. .streamlit/secrets.toml의 [connections.gsheets]에 spreadsheet를 설정해주세요.")
+    st.stop()
+
 conn = st.connection("gsheets", type = GSheetsConnection)
-df = conn.read(worksheet = "측정자료", usecols = [0,1,2], ttl = 0)
+df = conn.read(spreadsheet = spreadsheet, worksheet = "측정자료", usecols = [0,1,2], ttl = 0)
 # st.write(df)
 
 # 통학시간 제출하기
