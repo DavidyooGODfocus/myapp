@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import koreanize_matplotlib
+plt.rcParams["font.family"] = ["NanumGothic", "AppleGothic", "Malgun Gothic"]
+
 
 st.title("📝 상자그림 복습하기")
 st.info("과자 14개의 열량 자료를 상자그림으로 나타낸 것입니다. ")
