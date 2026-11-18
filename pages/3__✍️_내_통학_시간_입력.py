@@ -11,7 +11,7 @@ st.title("✍️ 내 통학시간 입력하기")
 st.info("입력한 값은 구글 시트 측정자료 탭에 학번과 함께 저장됩니다. ")
 
 student_id = st.session_state.get("학번")
-st.write(student_id)
+# st.write(student_id)
 
 if not student_id:
     st.warning("메인화면에서 먼저 학번을 입력해주세요.")

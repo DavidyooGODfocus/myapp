@@ -3,4 +3,6 @@ seaborn
 matplotlib
 koreanize-matplotlib
 setuptools
-st-gsheets-connection 
+st-gsheets-connection
+openai>=2,<3
+manim>=0.19,<0.20
