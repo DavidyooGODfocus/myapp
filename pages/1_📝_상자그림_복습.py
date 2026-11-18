@@ -25,7 +25,7 @@ data = [290, 291, 291, 293, 294, 295, 299, 301, 303, 303, 303, 305, 305, 307]
 st.write("**자료 (단위 : kcal) :**", ", ".join(map(str, data)))
 
 # 상자그림 그리기
-fig, ax = plt.subplots(figsize = (6, 4))
+fig, ax = plt.subplots(figsize = (8, 1))
 
 sns.boxplot(x = data, ax = ax)
 ax.set_xlabel("과자의 열량(kcal)")
