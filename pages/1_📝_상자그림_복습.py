@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+# Python 3.12+ no longer includes distutils. koreanize-matplotlib still imports
+# LooseVersion from it, so provide the compatible implementation bundled by setuptools.
+import sys
+import types
+from setuptools._distutils.version import LooseVersion
+
+distutils = types.ModuleType("distutils")
+distutils_version = types.ModuleType("distutils.version")
+distutils_version.LooseVersion = LooseVersion
+distutils.version = distutils_version
+sys.modules.setdefault("distutils", distutils)
+sys.modules.setdefault("distutils.version", distutils_version)
 import koreanize_matplotlib
 plt.rcParams["font.family"] = ["NanumGothic", "AppleGothic", "Malgun Gothic"]
 
