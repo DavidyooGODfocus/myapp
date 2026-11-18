@@ -35,7 +35,8 @@ sns.boxplot(data=df, x="통학 시간(분)", y="반", whis=(0, 100), ax=ax)
 st.pyplot(fig)
 
 # 데이터 요약
-summary = df.describe()
+summary = df.groupby("반").describe()
+# st.write(summary)
 question = "두 반의 상자그림을 보고 통학 시간의 분포를 비교하여 설명하세요."
 st.markdown(f"문제. {question}")
 
