@@ -2,12 +2,10 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-plt.rcParams["font.family"] = ["NanumGothic", "AppleGothic", "Malgun Gothic"]
-
+import koreanize_matplotlib
 
 st.title("📝 상자그림 복습하기")
-st.info("과자 14개의 열량 자료를 상자그림으로 나타낸 것이빈다. ")
-
+st.info("과자 14개의 열량 자료를 상자그림으로 나타낸 것입니다. ")
 data = [290, 291, 291, 293, 294, 295, 299, 301, 303, 303, 303, 305, 305, 307]
 
 st.write("**자료 (단위 : kcal) :**", ", ".join(map(str, data)))
