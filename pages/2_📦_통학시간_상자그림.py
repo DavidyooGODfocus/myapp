@@ -28,6 +28,8 @@ tab = "측정자료"
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&headers=1&sheet={quote(tab)}"
 df = pd.read_csv(url)
 
+st.metric("평균 통학 시간 (분)", f'{df["통학 시간(분)"].mean():.1f}', f"응답 인원 {len(df)}명")
+
 with st.expander("자료 보기"):
     # st.write(df)
     st.dataframe(df[["반", "통학 시간(분)"]], hide_index = True)
