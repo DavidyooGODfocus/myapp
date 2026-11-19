@@ -8,7 +8,7 @@ st.title("상자그림 형성평가")
 st.info("모든 문제를 푼 뒤 맨 아래 채점하기를 눌러주세요.")
 
 student_id = st.session_state.get("학번")
-# st.write(student_id)
+st.write(student_id)
 
 if not student_id:
     st.warning("메인 화면에서 학번을 먼저 입력하세요.")
